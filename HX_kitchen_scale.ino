@@ -12,8 +12,8 @@ HX711 scale;
 //  adjust pins if needed
 //  uint8_t dataPin = 6;
 //  uint8_t clockPin = 7;
-uint8_t dataPin  = 14;  //  for ESP32
-uint8_t clockPin = 15;  //  for ESP32
+const uint8_t dataPin  = static_cast<uint8_t>(A1);  //  A1 expands to an integer constant
+const uint8_t clockPin = static_cast<uint8_t>(A2);  //  so these remain valid uint8_t pin numbers
 
 void setup()
 {
