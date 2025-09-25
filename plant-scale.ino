@@ -1,5 +1,5 @@
-// lcd_thermometer.ino
-// nicole scribner 2025-09-22
+// plant-scale.ino
+// nicole scribner 2025-09-24
 
 // LCD display of DHT11 temp/humidity sensor output.
 // Based on Arduino and Elegoo tutorials for LCD screen and DHT11.
