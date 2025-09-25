@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import numpy as np
 import csv
 from datetime import datetime
 from pathlib import Path
@@ -9,7 +10,7 @@ import matplotlib.pyplot as plt
 
 
 DATA_DIR = Path("./data")
-OUTPUT_DIR = Path("./graphs")
+OUTPUT_DIR = Path("./data_graphs")
 
 
 def iter_csv_files(directory: Path) -> Iterable[Path]:
@@ -41,12 +42,15 @@ def create_graph(csv_path: Path, output_path: Path) -> None:
         return
 
     plt.figure()
-    plt.plot(timestamps, grams, marker="o", linestyle="-")
+    plt.plot(timestamps, grams, linestyle="-")
     plt.xlabel("Time")
     plt.ylabel("Measurement (grams)")
+    plt.axhline(y=608, color="red", label= "actual weight")
+    plt.axhline(y=np.mean(grams), color="green", label= "avg measurement")
     plt.title(f"Measurements over Time\n{csv_path.stem}")
     plt.xticks(rotation=45)
     plt.tight_layout()
+    plt.legend()
     plt.savefig(output_path)
     plt.close()
     print(f"Saved graph for {csv_path.name} -> {output_path}")
