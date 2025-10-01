@@ -43,3 +43,6 @@
 # graphs
 *.png
 ./data_graphs/*
+
+# vim
+*.sw*
