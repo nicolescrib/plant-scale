@@ -42,3 +42,4 @@
 
 # graphs
 *.png
+./data_graphs/*
